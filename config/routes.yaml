@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+result-page:
+    path:   /result
+    defaults: { _controller: "AppBu" }
+    methods: GET
+    requirements:
+        id: '\d+'

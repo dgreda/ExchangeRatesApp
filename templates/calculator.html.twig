@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ExchangeRatesApp{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>ExchangeRatesApp</h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

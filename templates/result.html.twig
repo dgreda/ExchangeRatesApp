@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ExchangeRatesApp - Your result{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>ExchangeRatesApp</h1>
+            <h3>{{ enquiry.amount|number_format(2, '.', ',') }} {{ enquiry.baseCurrency }}
+                in {{ enquiry.targetCurrency }} = {{ result|number_format(2, '.', ',') }}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">
+            <a href="{{ path('main_page') }}" class="btn btn-default">Go back</a>
+        </div>
+    </div>
+{% endblock %}
