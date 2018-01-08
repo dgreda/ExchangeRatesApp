@@ -23,6 +23,13 @@ composer install
 
 [Install yarn](https://yarnpkg.com/lang/en/docs/install/)
 
+#### Run the "frontend stuff"
+
+```
+npm install
+yarn run encore dev
+```
+
 #### Start server 
 
 ```
@@ -43,3 +50,19 @@ Document root is /Users/damiangreda/Dev/private/ExchangeRatesApp/public
 Press Ctrl-C to quit.
 
 ```
+
+#### Voilà!
+
+Enjoy converting currencies back and forth, like you've never done before!
+
+## Running tests
+
+```
+php bin/phpunit
+```
+
+## Notes
+
+This is just MVP with basic validation of input data and some unit tests already written.
+There is however still room for further development and improvements, considering better/customised exception handling
+and of course better and nicer frontend.

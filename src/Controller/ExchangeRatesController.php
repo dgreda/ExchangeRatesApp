@@ -16,11 +16,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class ExchangeRatesController extends Controller
 {
     /**
-     * @param Request $request
+     * @Route("/", name="main_page")
+     *
+     * @param Request         $request
+     * @param ExchangeService $service
      *
      * @return Response
-     *
-     * @Route("/", name="main_page")
      */
     public function calculator(Request $request, ExchangeService $service): Response
     {
@@ -39,24 +40,5 @@ class ExchangeRatesController extends Controller
         return $this->render('calculator.html.twig', [
             'form' => $form->createView(),
         ]);
-    }
-
-    /**
-     * Matches /result
-     *
-     * @param ExchangeService $service
-     *
-     * @return JsonResponse
-     *
-     * @Route("/result", name="result_page")
-     */
-    public function result(ExchangeService $service): JsonResponse
-    {
-        return $this->json(
-            [
-                'supported'        => $service->getSupportedCurrencies(),
-                'calculatedAmount' => $service->exchange(new ExchangeEnquiry(7000.00, 'PLN', 'EUR')),
-            ]
-        );
     }
 }
