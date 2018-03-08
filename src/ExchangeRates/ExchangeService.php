@@ -15,17 +15,17 @@ class ExchangeService
     protected $provider;
 
     /**
-     * @var Calculator
+     * @var CalculatorInterface
      */
     protected $calculator;
 
     /**
      * Exchange constructor.
      *
-     * @param ProviderInterface $provider
-     * @param Calculator        $calculator
+     * @param ProviderInterface   $provider
+     * @param CalculatorInterface $calculator
      */
-    public function __construct(ProviderInterface $provider, Calculator $calculator)
+    public function __construct(ProviderInterface $provider, CalculatorInterface $calculator)
     {
         $this->provider   = $provider;
         $this->calculator = $calculator;

@@ -14,7 +14,7 @@ class ServiceUnavailableException extends RuntimeException
      * @param int            $code
      * @param Throwable|null $previous
      */
-    public function __construct(string $message = "", int $code = 0, Throwable $previous = null)
+    public function __construct(string $message = '', int $code = 500, Throwable $previous = null)
     {
         if (empty($message)) {
             $message = 'Service temporarily unavailable. Please try again later.';
