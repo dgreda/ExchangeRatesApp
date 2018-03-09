@@ -4,6 +4,17 @@ php:
   - '7.2'
   - nightly
 
+services:
+  - docker
+
+addons:
+  hosts:
+    - security.sensiolabs.org
+
+before_install:
+  - docker pull nginx:alpine
+  - docker run -v $(pwd)/.travis/nginx.conf:/etc/nginx/nginx.conf:ro -d -p 80:80 nginx:alpine
+
 install:
    - composer install
 
