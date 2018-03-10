@@ -1,7 +1,7 @@
 # ExchangeRatesApp
 
-[![Author](http://img.shields.io/badge/author-@dgreda-blue.svg?style=flat-square)](https://www.linkedin.com/in/damiangreda)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Author](http://img.shields.io/badge/author-@dgreda-blue.svg)](https://www.linkedin.com/in/damiangreda)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/dgreda/ExchangeRatesApp.svg?branch=master)](https://travis-ci.org/dgreda/ExchangeRatesApp)
 [![codecov](https://codecov.io/gh/dgreda/ExchangeRatesApp/branch/master/graph/badge.svg)](https://codecov.io/gh/dgreda/ExchangeRatesApp)
 
