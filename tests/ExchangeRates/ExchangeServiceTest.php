@@ -108,6 +108,16 @@ class ExchangeServiceTest extends KernelTestCase
         ];
     }
 
+    public function testGetSupportedCurrencies()
+    {
+        $supportedCurrencies = ['EUR', 'USD'];
+        $this->providerProphecy->getSupportedCurrencies()->willReturn($supportedCurrencies);
+
+        $exchangeService = $this->makeExchangeService();
+
+        $this->assertSame($supportedCurrencies, $exchangeService->getSupportedCurrencies());
+    }
+
     /**
      * @return ExchangeService
      */
