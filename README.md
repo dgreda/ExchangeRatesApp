@@ -1,5 +1,10 @@
 # ExchangeRatesApp
 
+[![Author](http://img.shields.io/badge/author-@dgreda-blue.svg?style=flat-square)](https://www.linkedin.com/in/damiangreda)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://travis-ci.org/dgreda/ExchangeRatesApp.svg?branch=master)](https://travis-ci.org/dgreda/ExchangeRatesApp)
+[![codecov](https://codecov.io/gh/dgreda/ExchangeRatesApp/branch/master/graph/badge.svg)](https://codecov.io/gh/dgreda/ExchangeRatesApp)
+
 This currency converter is a small demonstration of Symfony 4 with PHP7 and GuzzleHttp V6 using Fixer's REST API
 for fetching exchange rates.
 
