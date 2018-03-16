@@ -40,9 +40,9 @@ class ExchangeEnquiry
      */
     public function __construct(float $amount = null, string $baseCurrency = null, string $targetCurrency = null)
     {
-        $this->amount         = $amount;
-        $this->baseCurrency   = $baseCurrency;
-        $this->targetCurrency = $targetCurrency;
+        $this->amount         = $amount ? $amount : 0.0;
+        $this->baseCurrency   = $baseCurrency ? $baseCurrency : '';
+        $this->targetCurrency = $targetCurrency ? $targetCurrency : '';
     }
 
     /**
@@ -72,7 +72,7 @@ class ExchangeEnquiry
     /**
      * @return float
      */
-    public function getAmount(): ?float
+    public function getAmount(): float
     {
         return $this->amount;
     }
@@ -80,7 +80,7 @@ class ExchangeEnquiry
     /**
      * @return string
      */
-    public function getBaseCurrency(): ?string
+    public function getBaseCurrency(): string
     {
         return $this->baseCurrency;
     }
@@ -88,7 +88,7 @@ class ExchangeEnquiry
     /**
      * @return string
      */
-    public function getTargetCurrency(): ?string
+    public function getTargetCurrency(): string
     {
         return $this->targetCurrency;
     }

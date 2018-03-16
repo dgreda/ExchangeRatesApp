@@ -91,7 +91,7 @@ class ExchangeServiceTest extends KernelTestCase
         return [
             [
                 'enquiry'      => new ExchangeEnquiry(
-                    1000,
+                    1000.00,
                     'EUR',
                     'PLN'
                 ),
@@ -99,11 +99,19 @@ class ExchangeServiceTest extends KernelTestCase
             ],
             [
                 'enquiry'      => new ExchangeEnquiry(
-                    9999,
+                    9999.00,
                     'CAD',
                     'USD'
                 ),
                 'exchangeRate' => 0.81,
+            ],
+            [
+                'enquiry'      => new ExchangeEnquiry(
+                    null,
+                    null,
+                    null
+                ),
+                'exchangeRate' => 4.2,
             ],
         ];
     }
