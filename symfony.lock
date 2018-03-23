@@ -2,6 +2,9 @@
     "composer/ca-bundle": {
         "version": "1.1.0"
     },
+    "composer/semver": {
+        "version": "1.4.2"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -25,6 +28,15 @@
     },
     "doctrine/lexer": {
         "version": "v1.0.1"
+    },
+    "friendsofphp/php-cs-fixer": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "81dee417d2cc60cd1c9d6208dff2ec22a1103e93"
+        }
     },
     "graham-campbell/guzzle-factory": {
         "version": "v3.0.0"
@@ -74,6 +86,9 @@
     "pdepend/pdepend": {
         "version": "2.5.2"
     },
+    "php-cs-fixer/diff": {
+        "version": "v1.3.0"
+    },
     "phpmd/phpmd": {
         "version": "2.6.0"
     },
@@ -115,9 +130,6 @@
             "version": "4.0",
             "ref": "576d653444dade07f272c889d52fe4594caa4fc3"
         }
-    },
-    "squizlabs/php_codesniffer": {
-        "version": "3.2.3"
     },
     "symfony/asset": {
         "version": "v4.0.3"
