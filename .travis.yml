@@ -21,6 +21,8 @@ install:
 script:
     - ./bin/phpunit --coverage-clover=coverage.xml
     - ./vendor/bin/phpstan analyse --level=7 src
+    - ./vendor/bin/phpcs -n -p --standard=PSR1,PSR2 src tests
+    - ./vendor/bin/phpmd src,tests xml phpmd.xml
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

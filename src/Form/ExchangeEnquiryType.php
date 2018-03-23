@@ -31,6 +31,8 @@ class ExchangeEnquiryType extends AbstractType
     }
 
     /**
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     *
      * @param FormBuilderInterface $builder
      * @param array                $options
      */

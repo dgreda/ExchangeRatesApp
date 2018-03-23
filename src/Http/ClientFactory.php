@@ -30,6 +30,8 @@ class ClientFactory
     }
 
     /**
+     * @SuppressWarnings(PHPMD.StaticAccess)
+     *
      * @return ClientInterface
      */
     public function make(): ClientInterface
