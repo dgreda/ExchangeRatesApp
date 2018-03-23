@@ -65,7 +65,6 @@ class ExchangeServiceTest extends KernelTestCase
 
     /**
      * @param ExchangeEnquiry $enquiry
-     *
      * @param float           $exchangeRate
      *
      * @dataProvider exchangeDataProvider

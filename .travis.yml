@@ -21,8 +21,8 @@ install:
 script:
     - ./bin/phpunit --coverage-clover=coverage.xml
     - ./vendor/bin/phpstan analyse --level=7 src
-    - ./vendor/bin/php-cs-fixer fix --verbose --dry-run src --rules=@Symfony,-binary_operator_spaces
-    - ./vendor/bin/php-cs-fixer fix --verbose --dry-run tests --rules=@Symfony,-binary_operator_spaces
+    - ./vendor/bin/php-cs-fixer fix --verbose --dry-run src --rules=@Symfony,-binary_operator_spaces,-concat_space
+    - ./vendor/bin/php-cs-fixer fix --verbose --dry-run tests --rules=@Symfony,-binary_operator_spaces,-concat_space
     - ./vendor/bin/phpmd src,tests xml phpmd.xml
 
 after_success:
