@@ -39,6 +39,8 @@ class Fixer implements ProviderInterface
      * @param string $targetCurrency
      *
      * @return float
+     *
+     * @throws ServiceUnavailableException
      */
     public function getLatestExchangeRate(string $baseCurrency, string $targetCurrency): float
     {
@@ -50,7 +52,7 @@ class Fixer implements ProviderInterface
         }
 
         try {
-            $response            = $this->client->request(
+            $response = $this->client->request(
                 static::REQUEST_METHOD,
                 $this->baseUri,
                 [
@@ -59,6 +61,7 @@ class Fixer implements ProviderInterface
                     ],
                 ]
             );
+
             $responseAsStdObject = \GuzzleHttp\json_decode($response->getBody());
         } catch (GuzzleException $e) {
             throw new ServiceUnavailableException('', 504, $e);
@@ -75,14 +78,17 @@ class Fixer implements ProviderInterface
 
     /**
      * @return array
+     *
+     * @throws ServiceUnavailableException
      */
     public function getSupportedCurrencies(): array
     {
         try {
-            $response        = $this->client->request(
+            $response = $this->client->request(
                 static::REQUEST_METHOD,
                 $this->baseUri
             );
+
             $responseAsArray = \GuzzleHttp\json_decode($response->getBody(), true);
         } catch (GuzzleException $e) {
             throw new ServiceUnavailableException('', 504, $e);
