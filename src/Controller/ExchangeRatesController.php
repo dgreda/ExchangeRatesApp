@@ -1,12 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace App\Controller;
 
 use App\Entity\ExchangeEnquiry;
 use App\ExchangeRates\ExchangeService;
-use App\Form\ExchangeEnquiryType;
+use App\Form\Type\ExchangeEnquiryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
