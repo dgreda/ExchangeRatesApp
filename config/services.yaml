@@ -1,7 +1,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    app.exchange_rates.client.fixeer.base_url: 'https://api.fixer.io/latest'
+    app.exchange_rates.client.fixeer.base_url: 'http://data.fixer.io/api/latest'
     locale: 'en'
 
 services:
@@ -33,6 +33,7 @@ services:
     App\ExchangeRates\Provider\Fixer:
         arguments:
             - '%app.exchange_rates.client.fixeer.base_url%'
+            - '%env(FIXER_API_KEY)%'
             - '@GuzzleHttp\ClientInterface'
 
     App\ExchangeRates\Provider\ProviderInterface: '@App\ExchangeRates\Provider\Fixer'

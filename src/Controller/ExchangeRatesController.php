@@ -7,12 +7,12 @@ namespace App\Controller;
 use App\Entity\ExchangeEnquiry;
 use App\ExchangeRates\ExchangeService;
 use App\Form\Type\ExchangeEnquiryType;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ExchangeRatesController extends Controller
+class ExchangeRatesController extends AbstractController
 {
     /**
      * @Route("/", name="main_page")

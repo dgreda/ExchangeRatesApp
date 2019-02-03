@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\ExchangeRates\Provider;
 
@@ -18,19 +18,19 @@ class Fixer implements ProviderInterface
     protected $baseUri;
 
     /**
+     * @var string
+     */
+    protected $token;
+
+    /**
      * @var ClientInterface
      */
     protected $client;
 
-    /**
-     * Client constructor.
-     *
-     * @param string          $baseUri
-     * @param ClientInterface $client
-     */
-    public function __construct(string $baseUri, ClientInterface $client)
+    public function __construct(string $baseUri, string $token, ClientInterface $client)
     {
         $this->baseUri = $baseUri;
+        $this->token   = $token;
         $this->client  = $client;
     }
 
@@ -57,7 +57,8 @@ class Fixer implements ProviderInterface
                 $this->baseUri,
                 [
                     'query' => [
-                        'base' => $baseCurrency,
+                        'base'       => $baseCurrency,
+                        'access_key' => $this->token,
                     ],
                 ]
             );
@@ -86,7 +87,12 @@ class Fixer implements ProviderInterface
         try {
             $response = $this->client->request(
                 static::REQUEST_METHOD,
-                $this->baseUri
+                $this->baseUri,
+                [
+                    'query' => [
+                        'access_key' => $this->token,
+                    ],
+                ]
             );
 
             $responseAsArray = \GuzzleHttp\json_decode($response->getBody(), true);
